@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+.color-picker-ctn {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.black {background-color: black;}
+.blue {background-color: blue;}
+.white {background-color: white}
+.grey {background-color: gray}
+.red {background-color: red}
+
+.selected {
+    border: 3px solid red;
+}
+
+.sneakers-ctn{
+    width: 100%;
+}
+
+.sneakers-item {
+
+}

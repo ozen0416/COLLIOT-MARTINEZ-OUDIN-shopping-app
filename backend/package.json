@@ -2,9 +2,9 @@
   "name": "howtoselljsonline",
   "version": "1.0.0",
   "description": "Test to build an API REST",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
-    "start": "supervisor main.js"
+    "start": "supervisor app.js"
   },
   "author": "Enzo",
   "license": "ISC",

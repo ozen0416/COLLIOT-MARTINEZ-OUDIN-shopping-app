@@ -1,10 +1,8 @@
 const express = require('express')
-
 const router = express.Router()
-
-const controller = require('../controllers/sneaker')
+const controller = require("../controller/sneaker")
 
 router.get('/sneakers', controller.getSneakers)
-router.get('/sneaker/:id', controller.getSneaker)
+router.get('/sneakers/:id', controller.getSneaker)
 
 module.exports = router
