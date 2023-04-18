@@ -9,8 +9,8 @@ app.use(cors({
     origin: '*'
 }))
 
-const sneakersRoute = require('./routes/sneakers')
+const shoesRoute = require('./routes/shoes')
 
-app.use(sneakersRoute)
+app.use(shoesRoute)
 
 app.listen(port, () => console.log(`listening on port ${port}`))

@@ -1,36 +1,36 @@
 const url = "http://localhost:3000"
 
 const btn = document.querySelector('.btn')
-const container = document.querySelector(".sneakers-ctn")
+const container = document.querySelector(".shoes-ctn")
 const pickers = document.querySelectorAll(".picker")
 
-let sneakers = []
-let filteredSneakers = []
+let shoes = []
+let filteredshoes = []
 
-function loadSneakers() {
-    fetch(`${url}/sneakers`)
+function loadshoes() {
+    fetch(`${url}/shoes`)
         .then(resp => {
             return resp.json()
         })
         .then(data => {
-            sneakers = data
-            filteredSneakers = data
-            console.log(filteredSneakers)
-            displaySneakers()
+            shoes = data
+            filteredshoes = data
+            console.log(filteredshoes)
+            displayShoes()
         })
 }
 
-function displaySneakers() {
+function displayShoes() {
     container.innerHTML = ""
-    filteredSneakers.forEach(sneaker => {
-        let sneakersCtn = document.createElement("div")
-        sneakersCtn.classList.add("sneakers-item")
-        sneakersCtn.innerHTML = `
-            <img class="sneakers.img" src="" alt="sneaker"/>
-            <div class="sneakers-name">${sneaker.name}</div>
+    filteredshoes.forEach(_shoes => {
+        let shoesCtn = document.createElement("div")
+        shoesCtn.classList.add("shoes-item")
+        shoesCtn.innerHTML = `
+            <img class="shoes.img" src="" alt="shoes"/>
+            <div class="shoes-name">${sneaker.name}</div>
             <div> ${sneaker.price}$ </div>
         `
-        container.appendChild(sneakersCtn)
+        container.appendChild(shoesCtn)
     })
 }
 
@@ -50,15 +50,15 @@ function selectItem(e) {
 
 function filterByColor(color) {
     if (color === "all") {
-        filteredSneakers = sneakers
-        loadSneakers()
+        filteredshoes = shoes
+        loadshoes()
     }
-    filteredSneakers = sneakers.filter(sneaker => sneaker.colors === color)
-    if (filteredSneakers.length <= 0) {
+    filteredshoes = shoes.filter(shoes => shoes.colors === color)
+    if (filteredshoes.length <= 0) {
         container.innerHTML = "R trouvé mon frère"
         return
     }
-    displaySneakers()
+    displayShoes()
 }
 
 // tri par prix
@@ -71,8 +71,8 @@ function comparedByPrice(a, b) {
 }
 
 function sortByPrice() {
-    filteredSneakers.sort(comparedByPrice)
-    displaySneakers()
+    filteredshoes.sort(comparedByPrice)
+    displayShoes()
 }
 
-loadSneakers()
+loadshoes()
