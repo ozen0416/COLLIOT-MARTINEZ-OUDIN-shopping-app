@@ -22,15 +22,23 @@ function loadshoes() {
 
 function displayShoes() {
     container.innerHTML = ""
-    filteredshoes.forEach(_shoes => {
-        let shoesCtn = document.createElement("div")
-        shoesCtn.classList.add("shoes-item")
-        shoesCtn.innerHTML = `
-            <img class="shoes.img" src="" alt="shoes"/>
-            <div class="shoes-name">${sneaker.name}</div>
-            <div> ${sneaker.price}$ </div>
+    filteredshoes.forEach(shoes => {
+        let nike1Ctn = document.createElement("div")
+        let jordanCtn = document.createElement("div")
+        nike1Ctn.classList.add("nike1-item")
+        jordanCtn.classList.add("jordan-item")
+        nike1Ctn.innerHTML = `
+            <img class="nike1-img" src="../backend/assets/img/NikeAirForce1.png" alt="nike1"/>
+            <div class="nike1-name">${shoes.name}</div>
+            <div> ${shoes.price} €</div>
         `
-        container.appendChild(shoesCtn)
+        jordanCtn.innerHTML = `
+        <img class="jordan-img" src="../backend/assets/img/AirJordan1Mid1.png" alt="nike"/>
+        <div class="shoes-name">${shoes.name}</div>
+        <div> ${shoes.price}€ </div>
+    `
+        container.appendChild(nike1Ctn)
+        container.appendChild(jordanCtn)
     })
 }
 

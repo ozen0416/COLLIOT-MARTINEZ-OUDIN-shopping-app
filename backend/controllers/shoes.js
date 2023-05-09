@@ -1,6 +1,6 @@
 const data = require("../data.json");
 
-exports.getShoes = (req, res) => {
+exports.getShoe = (req, res) => {
     const shoes = data.shoes
     if (!shoes) {
         res.status(404).send('Not found')
