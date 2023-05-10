@@ -62,16 +62,24 @@ function displayShoes() {
         btn.addEventListener("click", function (ev) {
             let shoe
             console.log(ev.target.classList[0])
-            fetch(`${url}/shoes/2`)
+            fetch(`${url}/shoes/${ev.target.classList[0]}`)
                 .then(resp => {
                     return resp.json()
                 })
                 .then(data => {
-                    console.log(data)
                     shoe = data["shoe"]
-                    console.log(shoe.price)
+                    if (localStorage.getItem(shoe.id) === null) {
+                        let shoeInfo = {
+                            "quantity": 1,
+                            "price": shoe.price
+                        }
+                        localStorage.setItem(shoe.id, JSON.stringify(shoeInfo))
+                    } else {
+                        console.log(localStorage.getItem(shoe.id))
+                        console.log(localStorage.getItem(shoe.id)["quantity"])
+                    }
+
                 })
-            console.log(shoe)
         })
 
     }
