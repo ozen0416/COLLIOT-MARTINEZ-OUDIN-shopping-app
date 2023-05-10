@@ -24,15 +24,17 @@ function displayShoes() {
     container.innerHTML = ""
     filteredshoes.forEach(shoe => {
         let shoeCtn = document.createElement("div")
-        shoeCtn.classList.add("shoe-item")
+        let shoeInfoCtn = document.createElement("div")
+        shoeInfoCtn.classList.add("shoe-item")
         let formattedShoeName = shoe.name.replace(/\s+/g, '')
-        shoeCtn.innerHTML = `
+        shoeInfoCtn.innerHTML = `
             <img class="shoe-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
         `
 
+        shoeCtn.appendChild(shoeInfoCtn)
+        shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
-        container.appendChild(displayPrice(shoe))
     })
 }
 
