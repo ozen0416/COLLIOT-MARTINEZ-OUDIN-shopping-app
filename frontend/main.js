@@ -50,7 +50,7 @@ function displayPrice(shoe) {
         `
     } else {
         priceCtn.innerHTML = `
-            <div style="text-decoration: line-through">${shoe.price} €</div> <div>${priceAfterReduc(shoe.price, shoe.reduction)} €</div>
+            <div style="text-decoration: line-through; margin-right:8px">${shoe.price} €</div> <div>${priceAfterReduc(shoe.price, shoe.reduction)} €</div>
         `
     }
 
