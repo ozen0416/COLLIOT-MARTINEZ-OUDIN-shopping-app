@@ -15,30 +15,22 @@ function loadshoes() {
         .then(data => {
             shoes = data
             filteredshoes = data
-            console.log(filteredshoes)
             displayShoes()
         })
 }
 
 function displayShoes() {
     container.innerHTML = ""
-    filteredshoes.forEach(shoes => {
-        let nike1Ctn = document.createElement("div")
-        let jordanCtn = document.createElement("div")
-        nike1Ctn.classList.add("nike1-item")
-        jordanCtn.classList.add("jordan-item")
-        nike1Ctn.innerHTML = `
-            <img class="nike1-img" src="../backend/assets/img/NikeAirForce1.png" alt="nike1"/>
-            <div class="nike1-name">${shoes.name}</div>
-            <div> ${shoes.price} €</div>
+    filteredshoes.forEach(shoe => {
+        let shoeCtn = document.createElement("div")
+        shoeCtn.classList.add("shoe-item")
+        let formattedShoeName = shoe.name.replace(/\s+/g, '')
+        shoeCtn.innerHTML = `
+            <img class="nike1-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="nike1"/>
+            <div class="nike1-name">${shoe.name}</div>
+            <div> ${shoe.price} €</div>
         `
-        jordanCtn.innerHTML = `
-        <img class="jordan-img" src="../backend/assets/img/AirJordan1Mid1.png" alt="nike"/>
-        <div class="shoes-name">${shoes.name}</div>
-        <div> ${shoes.price}€ </div>
-    `
-        container.appendChild(nike1Ctn)
-        container.appendChild(jordanCtn)
+        container.appendChild(shoeCtn)
     })
 }
 
