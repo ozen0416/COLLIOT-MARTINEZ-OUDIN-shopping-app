@@ -36,17 +36,30 @@ function displayShoes() {
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
     })
-    // let formattedShoeName = shoe.name.replace(/\s+/g, '')
-    // let srcImage = document.querySelectorAll(".shoe-img")
-    // for (let img of srcImage) {
-    //     img.addEventListener("mouseover", function() {
-    //         UpdateImage(img, formattedShoeName)
-    //     })
-    // }
+    let srcImage = document.querySelectorAll(".shoe-img")
+    for (let img of srcImage) {
+        img.addEventListener("mouseover", function() {
+            let rawPath = img.getAttribute("src")
+            let partiallyFormattedShoeName = rawPath.replace('../backend/assets/img/', '')
+            let formattedShoeName = partiallyFormattedShoeName.replace('1.png', '')
+            UpdateImageIn(img, formattedShoeName)
+        })
+
+        img.addEventListener("mouseout", function() {
+            let rawPath = img.getAttribute("src")
+            let partiallyFormattedShoeName = rawPath.replace('../backend/assets/img/', '')
+            let formattedShoeName = partiallyFormattedShoeName.replace('2.png', '')
+            UpdateImageOut(img, formattedShoeName)
+        })
+    }
 }
 
-function UpdateImage(srcImage, formattedShoeName) {
-    srcImage.src = `../assets/img/${formattedShoeName}2.png`
+function UpdateImageIn(srcImage, formattedShoeName) {
+    srcImage.src = `../backend/assets/img/${formattedShoeName}2.png`
+}
+
+function UpdateImageOut(srcImage, formattedShoeName) {
+    srcImage.src = `../backend/assets/img/${formattedShoeName}1.png`
 }
 
 // Price after reduction
