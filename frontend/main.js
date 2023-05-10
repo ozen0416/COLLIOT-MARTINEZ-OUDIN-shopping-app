@@ -27,12 +27,12 @@ function displayShoes() {
         shoeCtn.classList.add("shoe-item")
         let formattedShoeName = shoe.name.replace(/\s+/g, '')
         shoeCtn.innerHTML = `
-            <img class="shoe-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="nike1"/>
+            <img class="shoe-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
         `
 
         container.appendChild(shoeCtn)
-        container.appendChild(displayPrice(shoe, ))
+        container.appendChild(displayPrice(shoe))
     })
 }
 
