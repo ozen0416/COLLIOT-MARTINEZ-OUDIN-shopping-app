@@ -21,10 +21,10 @@
 }
 
 .black {background-color: black;}
-.blue {background-color: blue;}
 .white {background-color: white}
-.grey {background-color: gray}
 .red {background-color: red}
+.blue {background-color: blue;}
+.pink {background-color: pink;}
 
 .selected {
     border: 3px solid red;
@@ -93,4 +93,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.genre-picker-ctn {
+    margin: 10px 0;
+    display: flex;
+    gap: 10px;
 }

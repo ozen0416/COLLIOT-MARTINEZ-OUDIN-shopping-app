@@ -36,13 +36,13 @@ function displayShoes() {
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
     })
-    let formattedShoeName = shoe.name.replace(/\s+/g, '')
-    let srcImage = document.querySelectorAll(".shoe-img")
-    for (let img of srcImage) {
-        img.addEventListener("mouseover", function() {
-            UpdateImage(img, formattedShoeName)
-        })
-    }
+    // let formattedShoeName = shoe.name.replace(/\s+/g, '')
+    // let srcImage = document.querySelectorAll(".shoe-img")
+    // for (let img of srcImage) {
+    //     img.addEventListener("mouseover", function() {
+    //         UpdateImage(img, formattedShoeName)
+    //     })
+    // }
 }
 
 function UpdateImage(srcImage, formattedShoeName) {
@@ -77,11 +77,13 @@ pickers.forEach(picker => {
 function selectItem(e) {
     let picker = e.target
     let color = e.target.classList[2]
+    let genre = e.target.classList[2]
     pickers.forEach((e) => {
         e.classList.remove("selected")
     })
     picker.classList.add("selected")
     filterByColor(color)
+    filterByGenre(genre)
 }
 
 function filterByColor(color) {
@@ -90,6 +92,19 @@ function filterByColor(color) {
         loadshoes()
     }
     filteredshoes = shoes.filter(shoes => shoes.colors === color)
+    if (filteredshoes.length <= 0) {
+        container.innerHTML = "Résultat non trouvé"
+        return
+    }
+    displayShoes()
+}
+
+function filterByGenre(genre) {
+    if (genres === "all") {
+        filteredshoes = shoes
+        loadshoes()
+    }
+    filteredshoes = shoes.filter(shoes => shoes.genre === genres)
     if (filteredshoes.length <= 0) {
         container.innerHTML = "Résultat non trouvé"
         return
