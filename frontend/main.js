@@ -3,7 +3,6 @@ const url = "http://localhost:3000"
 const btn = document.querySelector('.btn')
 const container = document.querySelector(".shoes-ctn")
 const pickers = document.querySelectorAll(".picker")
-let srcImage = document.querySelectorAll(".shoe-image")
 
 let shoes = []
 let filteredshoes = []
@@ -37,6 +36,17 @@ function displayShoes() {
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
     })
+    let formattedShoeName = shoe.name.replace(/\s+/g, '')
+    let srcImage = document.querySelectorAll(".shoe-img")
+    for (let img of srcImage) {
+        img.addEventListener("mouseover", function() {
+            UpdateImage(img, formattedShoeName)
+        })
+    }
+}
+
+function UpdateImage(srcImage, formattedShoeName) {
+    srcImage.src = `../assets/img/${formattedShoeName}2.png`
 }
 
 // Price after reduction
@@ -81,7 +91,7 @@ function filterByColor(color) {
     }
     filteredshoes = shoes.filter(shoes => shoes.colors === color)
     if (filteredshoes.length <= 0) {
-        container.innerHTML = "R trouvé mon frère"
+        container.innerHTML = "Résultat non trouvé"
         return
     }
     displayShoes()
@@ -100,9 +110,4 @@ function sortByPrice() {
     filteredshoes.sort(comparedByPrice)
     displayShoes()
 }
-
-function UpdateImage() {
-    srcImage.src = `../assets/img/${formattedShoeName}2.png`
-}
-
-loadshoes()
+loadshoes() 
