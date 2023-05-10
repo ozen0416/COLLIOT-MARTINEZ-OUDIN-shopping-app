@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .color-picker-ctn {
@@ -32,6 +34,43 @@
     width: 100%;
 }
 
-.sneakers-item {
+.shoe-img {
+    width: 10px;
+}
 
+header {
+    background-image: linear-gradient(transparent,transparent);
+    display: flex;
+}
+
+a {
+    text-decoration:none;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+}
+
+.logo-ctn {
+    display: flex;
+    justify-content: center;
+    width: 33%;
+}
+
+.links-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+}
+
+.empty {
+    width:33%;
+}
+
+.price-ctn {
+    display: flex;
 }
