@@ -60,7 +60,7 @@
             "id": 5,
             "name": "Adidas 4DFWD",
             "price": 220,
-            "colors": ["pink","black"],
+            "colors": "black",   
             "reduction": 10,
             "description" :"Les Adidas 4DFWD sont des chaussures de course révolutionnaires conçues pour offrir une expérience de course ultime. Elles sont équipées d'une semelle intermédiaire en maille 3D imprimée en 4D, créée à partir de données de mouvement pour offrir un amorti ciblé et une propulsion optimale. Cette technologie unique améliore la stabilité, l'énergie et le confort, offrant ainsi une sensation de rebond et de réactivité lors de la course. La tige en mesh respirant assure une excellente ventilation, tandis que la semelle extérieure en caoutchouc offre une adhérence fiable. Les Adidas 4DFWD sont des chaussures de course de haute performance pour les coureurs à la recherche de l'innovation et de la performance maximale.",
             "img_1": "assets/img/Adidas4DFWD1.png",
