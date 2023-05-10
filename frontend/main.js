@@ -3,6 +3,7 @@ const url = "http://localhost:3000"
 const btn = document.querySelector('.btn')
 const container = document.querySelector(".shoes-ctn")
 const pickers = document.querySelectorAll(".picker")
+const temp = document.querySelectorAll(".picker2")
 
 let shoes = []
 let filteredshoes = []
@@ -31,7 +32,9 @@ function displayShoes() {
             <img class="shoe-img ${shoe.id}" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
         `
-        
+        shoeInfoCtn.addEventListener("click", function(e) {
+            sessionStorage.setItem("lastClicked", e.target.classList[1])
+        })
         shoeCtn.appendChild(shoeInfoCtn)
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
@@ -52,6 +55,10 @@ function displayShoes() {
             UpdateImageOut(img, formattedShoeName)
         })
     }
+}
+
+function Storage() {
+   sessionStorage.getItem("lastClicked")
 }
 
 function UpdateImageIn(srcImage, formattedShoeName) {
@@ -84,18 +91,31 @@ function displayPrice(shoe) {
 }
 
 pickers.forEach(picker => {
-    picker.addEventListener("click", selectItem)
+    picker.addEventListener("click", selectGenre)
 })
 
-function selectItem(e) {
+temp.forEach(picker => {
+    picker.addEventListener("click", selectColor)
+})
+
+function selectColor(e) {
     let picker = e.target
     let color = e.target.classList[2]
-    let genre = e.target.classList[2]
     pickers.forEach((e) => {
         e.classList.remove("selected")
     })
     picker.classList.add("selected")
     filterByColor(color)
+
+}
+
+function selectGenre(e) {
+    let pickers = e.target
+    let genre = e.target.classList[2]
+    pickers.forEach( (e) => {
+        e.classList.remove("selected")
+    })
+    pickers.classList.add("selected")
     filterByGenre(genre)
 }
 
@@ -104,7 +124,7 @@ function filterByColor(color) {
         filteredshoes = shoes
         loadshoes()
     }
-    filteredshoes = shoes.filter(shoes => shoes.colors === color)
+    filteredshoes = shoes.filter(shoe => shoe.colors === color)
     if (filteredshoes.length <= 0) {
         container.innerHTML = "Résultat non trouvé"
         return
@@ -112,12 +132,12 @@ function filterByColor(color) {
     displayShoes()
 }
 
-function filterByGenre(genre) {
+function filterByGenre(genres) {
     if (genres === "all") {
         filteredshoes = shoes
         loadshoes()
     }
-    filteredshoes = shoes.filter(shoes => shoes.genre === genres)
+    filteredshoes = shoes.filter(shoe => shoe.genre === genres)
     if (filteredshoes.length <= 0) {
         container.innerHTML = "Résultat non trouvé"
         return
@@ -138,4 +158,5 @@ function sortByPrice() {
     filteredshoes.sort(comparedByPrice)
     displayShoes()
 }
+Storage()
 loadshoes() 
