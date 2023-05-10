@@ -28,10 +28,10 @@ function displayShoes() {
         shoeInfoCtn.classList.add("shoe-item")
         let formattedShoeName = shoe.name.replace(/\s+/g, '')
         shoeInfoCtn.innerHTML = `
-            <img class="shoe-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
+            <img class="shoe-img ${shoe.id}" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
         `
-
+        
         shoeCtn.appendChild(shoeInfoCtn)
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)

@@ -17,7 +17,7 @@ exports.getShoes = (req, res) => {
     }
 
     res.status(200).json({
-        message: "Sneaker success",
+        message: "Chaussure trouvée",
         shoe
     })
 }
