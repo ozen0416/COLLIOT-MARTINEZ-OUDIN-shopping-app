@@ -19,6 +19,7 @@ function loadshoes() {
         })
 }
 
+// Fonction that creates page content
 function displayShoes() {
     container.innerHTML = ""
     filteredshoes.forEach(shoe => {
@@ -26,12 +27,34 @@ function displayShoes() {
         shoeCtn.classList.add("shoe-item")
         let formattedShoeName = shoe.name.replace(/\s+/g, '')
         shoeCtn.innerHTML = `
-            <img class="nike1-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="nike1"/>
-            <div class="nike1-name">${shoe.name}</div>
-            <div> ${shoe.price} €</div>
+            <img class="shoe-img" src="../backend/assets/img/${formattedShoeName}1.png" alt="nike1"/>
+            <div class="shoe-name">${shoe.name}</div>
         `
+
         container.appendChild(shoeCtn)
+        container.appendChild(displayPrice(shoe, ))
     })
+}
+
+// Price after reduction
+function priceAfterReduc(basePrice, reduc) {
+    return basePrice - basePrice*reduc/100
+}
+
+function displayPrice(shoe) {
+    let priceCtn = document.createElement("div")
+    priceCtn.classList.add("price-ctn")
+    if (shoe.reduction === 0) {
+        priceCtn.innerHTML = `
+            <div>${shoe.price} €</div>
+        `
+    } else {
+        priceCtn.innerHTML = `
+            <div style="text-decoration: line-through">${shoe.price} €</div> <div>${priceAfterReduc(shoe.price, shoe.reduction)} €</div>
+        `
+    }
+
+    return priceCtn
 }
 
 pickers.forEach(picker => {
@@ -61,7 +84,7 @@ function filterByColor(color) {
     displayShoes()
 }
 
-// tri par prix
+// Sort by price
 
 const priceBtn = document.querySelector(".price-btn")
 priceBtn.addEventListener("click", sortByPrice)
