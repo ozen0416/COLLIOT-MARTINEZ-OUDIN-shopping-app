@@ -3,6 +3,7 @@ const url = "http://localhost:3000"
 const btn = document.querySelector('.btn')
 const container = document.querySelector(".shoes-ctn")
 const pickers = document.querySelectorAll(".picker")
+let srcImage = document.querySelectorAll(".shoe-image")
 
 let shoes = []
 let filteredshoes = []
@@ -96,6 +97,10 @@ function comparedByPrice(a, b) {
 function sortByPrice() {
     filteredshoes.sort(comparedByPrice)
     displayShoes()
+}
+
+function UpdateImage() {
+    srcImage.src = `../assets/img/${formattedShoeName}2.png`
 }
 
 loadshoes()
