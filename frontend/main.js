@@ -30,6 +30,7 @@ function displayShoes() {
         shoeInfoCtn.innerHTML = `
             <img class="shoe-img ${shoe.id}" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
+            <button class="${shoe.id} add-btn">Add to card</button>
         `
         
         shoeCtn.appendChild(shoeInfoCtn)
@@ -51,6 +52,25 @@ function displayShoes() {
             let formattedShoeName = partiallyFormattedShoeName.replace('2.png', '')
             UpdateImageOut(img, formattedShoeName)
         })
+    }
+    
+    let addToCardBtnList = document.querySelectorAll(".add-btn")
+    for (let btn of addToCardBtnList) {
+        btn.addEventListener("click", function (ev) {
+            let shoe
+            console.log(ev.target.classList[0])
+            fetch(`${url}/shoes/2`)
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    console.log(data)
+                    shoe = data["shoe"]
+                    console.log(shoe.price)
+                })
+            console.log(shoe)
+        })
+
     }
 }
 
