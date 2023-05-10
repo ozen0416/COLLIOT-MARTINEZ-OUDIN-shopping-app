@@ -2,7 +2,7 @@
     "shoes": [
         {
             "id": 1,
-            "name": "Nike Air Force 1 '07",
+            "name": "Nike Air Force 1",
             "price": 119,
             "colors": "white",
             "reduction": 0,
