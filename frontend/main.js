@@ -85,16 +85,20 @@ function displayShoes() {
                         }
                         localStorage.setItem(shoe.id, JSON.stringify(shoeInfo))
                     } else {
-                        let shoeJson = JSON.parse(localStorage.getItem(shoe.id))
-                        shoeJson["quantity"] = shoeJson["quantity"] + 1
-                        console.log(shoeJson["quantity"])
-                        localStorage.setItem(shoe.id, JSON.stringify(shoeJson))
+                        changeQuant(shoe.id, 1)
                     }
 
                 })
         })
 
     }
+}
+
+function changeQuant(id, value) {
+    let shoeJson = JSON.parse(localStorage.getItem(id))
+    shoeJson["quantity"] = shoeJson["quantity"] + value
+    console.log(shoeJson["quantity"])
+    localStorage.setItem(id, JSON.stringify(shoeJson))
 }
 
 function Storage() {
