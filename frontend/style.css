@@ -77,7 +77,11 @@ a {
 }
 
 .price-btn {
-    margin: 5px;   
+    margin: 10px;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 60%;
+    font-size: larger;
 }
 
 .shoes-ctn {
@@ -104,4 +108,12 @@ a {
 .disponibility-ctn {
     display: flex;
     align-items: center;
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    right: 0px;
+    width: 30%;
+    height: 100vw;
 }

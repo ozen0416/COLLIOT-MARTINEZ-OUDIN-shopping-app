@@ -1,0 +1,4 @@
+Theo : localStorage, hover image, prix/reduction, panier, README
+Enzo : json, copie du back, index, css, filtres, tri, images
+
+Travail équitable dans sa totalité, aucun problème

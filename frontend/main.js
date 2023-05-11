@@ -43,9 +43,6 @@ function displayShoes() {
             <div class="shoe-name">${shoe.name}</div>
         `
         }
-        shoeInfoCtn.addEventListener("click", function(e) {
-            sessionStorage.setItem("lastClicked", e.target.classList[1])
-        })
         shoeCtn.appendChild(shoeInfoCtn)
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
@@ -94,6 +91,7 @@ function displayShoes() {
     }
 }
 
+<<<<<<< HEAD
 function changeQuant(id, value) {
     let shoeJson = JSON.parse(localStorage.getItem(id))
     shoeJson["quantity"] = shoeJson["quantity"] + value
@@ -101,10 +99,8 @@ function changeQuant(id, value) {
     localStorage.setItem(id, JSON.stringify(shoeJson))
 }
 
-function Storage() {
-   sessionStorage.getItem("lastClicked")
-}
-
+=======
+>>>>>>> 96db0be93f9c0baf8bce615f51b9becc22fd35a1
 function UpdateImageIn(srcImage, formattedShoeName) {
     srcImage.src = `../backend/assets/img/${formattedShoeName}2.png`
 }
@@ -210,7 +206,6 @@ function filterByDispo(dispo) {
 }
 
 // Sort by price
-
 const priceBtn = document.querySelector(".price-btn")
 priceBtn.addEventListener("click", sortByPrice)
 
@@ -222,5 +217,4 @@ function sortByPrice() {
     filteredshoes.sort(comparedByPrice)
     displayShoes()
 }
-Storage()
-loadshoes() 
+loadshoes()
