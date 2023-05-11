@@ -43,9 +43,6 @@ function displayShoes() {
             <div class="shoe-name">${shoe.name}</div>
         `
         }
-        shoeInfoCtn.addEventListener("click", function(e) {
-            sessionStorage.setItem("lastClicked", e.target.classList[1])
-        })
         shoeCtn.appendChild(shoeInfoCtn)
         shoeCtn.appendChild(displayPrice(shoe))
         container.appendChild(shoeCtn)
@@ -95,10 +92,6 @@ function displayShoes() {
         })
 
     }
-}
-
-function Storage() {
-   sessionStorage.getItem("lastClicked")
 }
 
 function UpdateImageIn(srcImage, formattedShoeName) {
@@ -217,5 +210,4 @@ function sortByPrice() {
     filteredshoes.sort(comparedByPrice)
     displayShoes()
 }
-Storage()
 loadshoes()

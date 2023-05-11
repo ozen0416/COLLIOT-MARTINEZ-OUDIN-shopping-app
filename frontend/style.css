@@ -77,7 +77,11 @@ a {
 }
 
 .price-btn {
-    margin: 5px;   
+    margin: 10px;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 60%;
+    font-size: larger;
 }
 
 .shoes-ctn {
