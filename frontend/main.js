@@ -91,16 +91,12 @@ function displayShoes() {
     }
 }
 
-<<<<<<< HEAD
 function changeQuant(id, value) {
     let shoeJson = JSON.parse(localStorage.getItem(id))
     shoeJson["quantity"] = shoeJson["quantity"] + value
     console.log(shoeJson["quantity"])
     localStorage.setItem(id, JSON.stringify(shoeJson))
 }
-
-=======
->>>>>>> 96db0be93f9c0baf8bce615f51b9becc22fd35a1
 function UpdateImageIn(srcImage, formattedShoeName) {
     srcImage.src = `../backend/assets/img/${formattedShoeName}2.png`
 }
