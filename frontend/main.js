@@ -75,8 +75,10 @@ function displayShoes() {
                         }
                         localStorage.setItem(shoe.id, JSON.stringify(shoeInfo))
                     } else {
-                        console.log(localStorage.getItem(shoe.id))
-                        console.log(localStorage.getItem(shoe.id)["quantity"])
+                        let shoeJson = JSON.parse(localStorage.getItem(shoe.id))
+                        shoeJson["quantity"] = shoeJson["quantity"] + 1
+                        console.log(shoeJson["quantity"])
+                        localStorage.setItem(shoe.id, JSON.stringify(shoeJson))
                     }
 
                 })
