@@ -105,3 +105,11 @@ a {
     display: flex;
     align-items: center;
 }
+
+.modal {
+    position: absolute;
+    display: none;
+    right: 0px;
+    width: 30%;
+    height: 100vw;
+}

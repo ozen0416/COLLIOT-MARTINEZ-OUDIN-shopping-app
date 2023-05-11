@@ -206,7 +206,6 @@ function filterByDispo(dispo) {
 }
 
 // Sort by price
-
 const priceBtn = document.querySelector(".price-btn")
 priceBtn.addEventListener("click", sortByPrice)
 
@@ -219,4 +218,4 @@ function sortByPrice() {
     displayShoes()
 }
 Storage()
-loadshoes() 
+loadshoes()
