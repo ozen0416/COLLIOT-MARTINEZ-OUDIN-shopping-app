@@ -3,7 +3,9 @@ const url = "http://localhost:3000"
 const btn = document.querySelector('.btn')
 const container = document.querySelector(".shoes-ctn")
 const pickers = document.querySelectorAll(".picker")
-const temp = document.querySelectorAll(".picker2")
+const sexe = document.querySelectorAll(".picker2")
+const disponibility = document.querySelectorAll(".picker3")
+
 
 let shoes = []
 let filteredshoes = []
@@ -28,11 +30,19 @@ function displayShoes() {
         let shoeInfoCtn = document.createElement("div")
         shoeInfoCtn.classList.add("shoe-item")
         let formattedShoeName = shoe.name.replace(/\s+/g, '')
-        shoeInfoCtn.innerHTML = `
+        if (shoe.available === "true") {
+            shoeInfoCtn.innerHTML = `
             <img class="shoe-img ${shoe.id}" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
             <div class="shoe-name">${shoe.name}</div>
             <button class="${shoe.id} add-btn">Add to card</button>
         `
+        }
+        if (shoe.available === "false") {
+            shoeInfoCtn.innerHTML = `
+            <img class="shoe-img ${shoe.id}" src="../backend/assets/img/${formattedShoeName}1.png" alt="${shoe.name}"/>
+            <div class="shoe-name">${shoe.name}</div>
+        `
+        }
         shoeInfoCtn.addEventListener("click", function(e) {
             sessionStorage.setItem("lastClicked", e.target.classList[1])
         })
@@ -119,12 +129,17 @@ function displayPrice(shoe) {
 }
 
 pickers.forEach(picker => {
+    picker.addEventListener("click", selectColor)
+})
+
+sexe.forEach(picker => {
     picker.addEventListener("click", selectGenre)
 })
 
-temp.forEach(picker => {
-    picker.addEventListener("click", selectColor)
+disponibility.forEach(picker => {
+    picker.addEventListener("click", selectDispo)
 })
+
 
 function selectColor(e) {
     let picker = e.target
@@ -138,13 +153,23 @@ function selectColor(e) {
 }
 
 function selectGenre(e) {
-    let pickers = e.target
+    let picker = e.target
     let genre = e.target.classList[2]
-    pickers.forEach( (e) => {
+    sexe.forEach((e) => {
         e.classList.remove("selected")
     })
-    pickers.classList.add("selected")
+    picker.classList.add("selected")
     filterByGenre(genre)
+}
+
+function selectDispo(e) {
+    let picker = e.target
+    let dispo = e.target.classList[2]
+    disponibility.forEach((e) => {
+        e.classList.remove("selected")
+    })
+    picker.classList.add("selected")
+    filterByDispo(dispo)
 }
 
 function filterByColor(color) {
@@ -160,13 +185,18 @@ function filterByColor(color) {
     displayShoes()
 }
 
-function filterByGenre(genres) {
-    if (genres === "all") {
-        filteredshoes = shoes
-        loadshoes()
+function filterByGenre(genre) {
+    filteredshoes = shoes.filter(shoe => shoe.genre === genre)
+    if (filteredshoes.length <= 0 ) {
+        container.innerHTML = "Résultat non trouvé"
+        return
     }
-    filteredshoes = shoes.filter(shoe => shoe.genre === genres)
-    if (filteredshoes.length <= 0) {
+    displayShoes()
+}
+
+function filterByDispo(dispo) {
+    filteredshoes = shoes.filter(shoe => shoe.available === dispo)
+    if (filteredshoes.length <= 0 ) {
         container.innerHTML = "Résultat non trouvé"
         return
     }

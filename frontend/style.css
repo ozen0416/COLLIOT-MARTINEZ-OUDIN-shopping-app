@@ -100,3 +100,8 @@ a {
     display: flex;
     gap: 10px;
 }
+
+.disponibility-ctn {
+    display: flex;
+    align-items: center;
+}

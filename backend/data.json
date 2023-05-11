@@ -10,7 +10,7 @@
             "img_1": "assets/img/NikeAirForce1.png",
             "img_2": "assets/img/NikeAirForce2.png",
             "img_3": "assets/img/NikeAirForce3.png",
-            "available": true,
+            "available": "true",
             "genre" : "homme",
             "sizes": [38.5,39,40,46,47,47.5,48.5,49.5,50.5,51.5]
         },
@@ -24,7 +24,7 @@
             "img_1": "assets/img/NikeAirMaxPlus1.png",
             "img_2": "assets/img/NikeAirMaxPlus2.png",
             "img_3": "assets/img/NikeAirMaxPlus3.png",
-            "available": false,
+            "available": "false",
             "genre" : "homme",
             "sizes": [38,38.5,39,40,40.5,41,42,42.5,43,44,44.5,45,45.5,45.5,46,47,47.5,48.5,49.5]
         },
@@ -38,7 +38,7 @@
             "img_1": "assets/img/AirJordan1Mid1.png",
             "img_2": "assets/img/AirJordan1Mid2.png",
             "img_3": "assets/img/AirJordan1Mid3.png",
-            "available": true,
+            "available": "true",
             "genre" : "homme",
             "sizes": [49.5,50]
         },
@@ -52,7 +52,7 @@
             "img_1": "assets/img/Astir1.png",
             "img_2": "assets/img/Astir2.png",
             "img_3": "assets/img/Astir3.png",
-            "available": true,
+            "available": "true",
             "genre" : "femme",
             "sizes": [36,36.5,37.5,38,39.5,40,42]
         },
@@ -66,7 +66,7 @@
             "img_1": "assets/img/Adidas4DFWD1.png",
             "img_2": "assets/img/Adidas4DFWD2.png",
             "img_3": "assets/img/Adidas4DFWD3.png",
-            "available": true,
+            "available": "true",
             "genre" : "femme",
             "sizes": [36,39.5,40,40.5,41.5,42,43.5]
         },
@@ -80,7 +80,7 @@
             "img_1": "assets/img/GazelleBold1.png",
             "img_2": "assets/img/GazelleBold2.png",
             "img_3": "assets/img/GazelleBold3.png",
-            "available": true,
+            "available": "true",
             "genre" : "femme",
             "sizes": [38.5,39.5,40,40.5,41.5,42,42.5,43.5,44]
         },
@@ -94,7 +94,7 @@
             "img_1": "assets/img/VANSXHARIBOCLASSICSLIP-ON1.png",
             "img_2": "assets/img/VANSXHARIBOCLASSICSLIP-ON2.png",
             "img_3": "assets/img/VANSXHARIBOCLASSICSLIP-ON3.png",
-            "available": true,
+            "available": "true",
             "genre" : "enfant",
             "sizes": [27,27.5,28,29,30,30.5,31,31.5,32,32.5,33,34]
         },
@@ -108,7 +108,7 @@
             "img_1": "assets/img/FLORALAUTHENTIC1.png",
             "img_2": "assets/img/FLORALAUTHENTIC2.png",
             "img_3": "assets/img/FLORALAUTHENTIC3.png",
-            "available": true,
+            "available": "true",
             "genre" : "enfant",
             "sizes": [27,27.5,28,29,30,30.5,31,31.5,32,32.5,33,34]
         },
@@ -122,7 +122,7 @@
             "img_1": "assets/img/VANSXHARIBOAUTHENTICELASTICLACES1.png",
             "img_2": "assets/img/VANSXHARIBOAUTHENTICELASTICLACES2.png",
             "img_3": "assets/img/VANSXHARIBOAUTHENTICELASTICLACES3.png",
-            "available": false,
+            "available": "false",
             "genre" : "enfant",
             "sizes": [19,20,21,21.5,22,22.5,23.5,24,24.5,25,25.5,26,26.5]
         },
@@ -136,7 +136,7 @@
             "img_1": "assets/img/Mocassin1801.png",
             "img_2": "assets/img/Mocassin1802.png",
             "img_3": "assets/img/Mocassin1803.png",
-            "available": true,
+            "available": "true",
             "genre" : "homme",
             "sizes": [35,37,37.5,38,38.5,39,40]
         }
